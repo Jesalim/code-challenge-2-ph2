@@ -1,42 +1,28 @@
 import React from "react";
-export default function BotCollection({ handleSUbmit,
-  name,
-  health,
-  damage,
-  armor,
-  classes,
-  catchphrase,
-  image,
-  created,
-  update,
-}) {
+import BotCard from "./BotCard";
 
-
+function BotCollection({ bots, addBot, deleteBot }) {
+  const botItem = bots.map((bot) => {
+    return (
+      <BotCard
+        key={bot.id}
+        bot={bot}
+        clickEvent={addBot}
+        deleteBot={deleteBot}
+       
+      />
+    );
+  });
   return (
-    <div className="card" onClick={(e)=>
-      {handleSUbmit( name,
-      health,
-      damage,
-      armor,
-      classes,
-      catchphrase,
-      image,
-      created,
-      update,)}}>
-      <div className="cont">
-
-        <div className="card-container" id="card">
-          <img src={image} className="" alt={name} />
-          <h6 className="card-title">name: {name}</h6>
-          <p className="titles">damage :{damage}</p>
-          <p className="titles">HEALTH :{health}</p>
-          <p className="titles">ARMOR :{armor}</p>
-          <p className="titles">CLASS :{classes}</p>
-          <p className="titles">CATCHPHRASE :{catchphrase}</p>
-          <p className="titles"> CREATED AT:{created}</p>
-          <p className="titles">UPDATED AT :{update}</p>
-        </div>
+    <div className="container mt-4">
+      <div className="row">
+      
+        {botItem}
       </div>
     </div>
   );
 }
+
+export default BotCollection;
+
+    
