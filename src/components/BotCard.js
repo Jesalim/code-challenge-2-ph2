@@ -25,7 +25,7 @@ function BotCard({ bot, clickEvent, deleteBot }) {
           <h3 className="amount">BotClass: {bot.bot_class}</h3>
         </th> */}
      
-          <h3 className="amount"></h3>
+          {/* <h3 className="amount"></h3> */}
           <p>
               <strong>Catchphrase: </strong>
               {bot.catchphrase}
@@ -57,5 +57,3 @@ function BotCard({ bot, clickEvent, deleteBot }) {
   }
 
   export default BotCard;
-
-

@@ -6,7 +6,8 @@ function Display() {
   let [bots, setBot] = useState([])
 
   useEffect(() => {
-    fetch("https://richardbotbattlr-json.vercel.app/bots")
+    // fetch("https://richardbotbattlr-json.vercel.app/bots")
+    fetch("https://vercel1-smoky.vercel.app/bots")
       .then((resp) => resp.json())
       .then(data => setBot(data))
   }, [])
